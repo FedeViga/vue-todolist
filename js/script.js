@@ -44,7 +44,12 @@ createApp({
                     text: 'tagliando macchina',
                     done: true
                 }
-            ]
+            ],
+
+            newTask: {
+                text: '',
+                done: false
+            }
 
         }
         
@@ -57,6 +62,11 @@ createApp({
 
             this.tasks.splice(currentTask, 1)
 
+        },
+
+        // meteodo per aggiungere un nuovo task alla lista
+        addTask() {
+            this.tasks.push({...this.newTask})
         }
     }
 

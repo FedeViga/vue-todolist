@@ -23,11 +23,30 @@
 
         <div class="container">
             
-            <div class="card col-12 col-md-9 mx-auto mt-5 p-3 text-center text-white bg-black shadow-lg">
+            <div class="card col-12 col-md-9 mx-auto mt-5 p-3 text-white bg-black shadow-lg">
 
-                <h1 class="text-center my-5">
+                <h1 class="text-center mb-3">
                     To-Do List
                 </h1>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Inserisci nuovo task</span>
+                    <input 
+                        v-model="newTask.text"
+                        type="text" 
+                        class="form-control bg-dark text-white" 
+                        aria-label="Sizing example input" 
+                        aria-describedby="inputGroup-sizing-default"
+                    >
+                    <button 
+                        @click="addTask()" 
+                        class="btn btn-light" 
+                        type="button" 
+                        id="button-addon2"
+                    >
+                        Aggiungi
+                    </button>
+                  </div>
 
                 <!-- lista di task -->
                 <ul class="list-group">
