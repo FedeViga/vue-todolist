@@ -47,6 +47,17 @@ createApp({
             ]
 
         }
+        
     },
+
+    methods: {
+        
+        // metodo per eliminare un task al click dell'icona X
+        deleteTask(currentTask) {
+
+            this.tasks.splice(currentTask, 1)
+
+        }
+    }
 
 }).mount('#app');
