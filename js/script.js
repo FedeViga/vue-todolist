@@ -66,7 +66,9 @@ createApp({
 
         // meteodo per aggiungere un nuovo task alla lista
         addTask() {
+
             this.tasks.push({...this.newTask})
+            
         }
     }
 

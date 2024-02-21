@@ -33,6 +33,7 @@
                     <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Inserisci nuovo task</span>
                     <input 
                         v-model="newTask.text"
+                        @keyup.enter="addTask()"
                         type="text" 
                         class="form-control bg-dark text-white" 
                         aria-label="Sizing example input" 
