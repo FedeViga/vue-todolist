@@ -29,7 +29,7 @@
                     To-Do List
                 </h1>
                 
-                <div class="input-group mb-3">
+                <div class="input-group mb-4">
                     <span class="input-group-text bg-dark text-white" id="inputGroup-sizing-default">Inserisci nuovo task</span>
                     <input 
                         v-model="newTask.text"
@@ -50,32 +50,35 @@
                   </div>
 
                 <!-- lista di task -->
-                <ul class="list-group">
+                <div class="list-group">
 
-                    <!-- creo li per ogni oggetto contenuto nell'array tasks -->
-                    <li 
+                    <!-- elemento contenente il task e il bottone per rimuoverlo -->
+                    <div 
                         v-for="(currentTask, index) in tasks"
-                        class="list-group-item list-group-item-action user-select-none d-flex justify-content-between border border-white text-white"
-                        :class="currentTask.done==true ? 'bg-success' : 'bg-danger'"
+                        class="d-flex align-items-center gap-3 mb-2"
                     >
-
-                        <!-- se il task è stato eseguito sbarro il testo -->
-                        <span 
-                            @click="invertTaskDone(index)"
-                            :class="currentTask.done ? 'text-decoration-line-through' : ''"
+                        <!-- task -->
+                        <div 
+                            class="list-group-item list-group-item-action user-select-none d-flex justify-content-between border border-white rounded-2 text-white"
+                            :class="currentTask.done==true ? 'bg-success' : 'bg-danger'"
                             role='button'
+                            @click="invertTaskDone(index)"
                         >
-                            
-                            {{currentTask.text}}
 
-                        </span>
+                            <span :class="currentTask.done ? 'text-decoration-line-through' : ''">
+                                
+                                {{currentTask.text}}
+    
+                            </span>
+    
+                        </div>
 
                         <!-- al click dell'icona rimuovo il task corrispondente -->
-                        <i @click="deleteTask(index)" class="fa-solid fa-square-xmark fs-4" role='button'></i>
+                        <i @click="deleteTask(index)" class="fa-solid fa-square-xmark fs-3" role='button'></i>
 
-                    </li>
+                    </div>
                     
-                </ul>
+                </div>
             </div>
     
         </div>

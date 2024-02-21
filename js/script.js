@@ -29,20 +29,44 @@ createApp({
             tasks: [
 
                 {
-                    text: 'Fare spesa',
-                    done: true
+                    text: "Fare la spesa",
+                    done: false,
                 },
                 {
-                    text: 'Pulire casa',
-                    done: false
+                    text: "Portare a spasso il cane",
+                    done: true,
                 },
                 {
-                    text: 'comprare cibo del cane',
-                    done: false
+                    text: "Preparare la cena",
+                    done: false,
                 },
                 {
-                    text: 'tagliando macchina',
-                    done: true
+                    text: "Pagare le bollette",
+                    done: false,
+                },
+                {
+                    text: "Telefonare alla nonna",
+                    done: true,
+                },
+                {
+                    text: "Scrivere un'email",
+                    done: false,
+                },
+                {
+                    text: "Leggere un libro",
+                    done: false,
+                },
+                {
+                    text: "Fare una passeggiata",
+                    done: true,
+                },
+                {
+                    text: "Guardare un film",
+                    done: false,
+                },
+                {
+                    text: "Pulire la casa",
+                    done: false,
                 }
             ],
 
@@ -64,10 +88,16 @@ createApp({
 
         },
 
-        // meteodo per aggiungere un nuovo task alla lista
+        // metodo per aggiungere un nuovo task alla lista
         addTask() {
 
-            this.tasks.push({...this.newTask})
+            // controllo che il campo di input non sia vuoto
+            if(this.newTask.text.trim() != "") {
+
+                this.tasks.push({...this.newTask});
+            }
+
+            this.newTask.text = ""
 
         },
 
