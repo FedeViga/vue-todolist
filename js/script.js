@@ -14,3 +14,39 @@ Bonus:
 1- oltre al click sul pulsante per la aggiunta del task, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
+
+
+
+const { createApp } = Vue
+
+createApp({
+
+    data() {
+
+        return {
+            
+            // array di oggetti contenenti il testo del task e variabile booleana
+            tasks: [
+
+                {
+                    text: 'Fare spesa',
+                    done: true
+                },
+                {
+                    text: 'Pulire casa',
+                    done: false
+                },
+                {
+                    text: 'comprare cibo del cane',
+                    done: false
+                },
+                {
+                    text: 'tagliando macchina',
+                    done: true
+                }
+            ]
+
+        }
+    },
+
+}).mount('#app');
