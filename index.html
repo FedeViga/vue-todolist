@@ -55,12 +55,19 @@
                     <!-- creo li per ogni oggetto contenuto nell'array tasks -->
                     <li 
                         v-for="(currentTask, index) in tasks"
-                        class="list-group-item list-group-item-action d-flex justify-content-between bg-dark border border-white text-white"
+                        class="list-group-item list-group-item-action user-select-none d-flex justify-content-between border border-white text-white"
+                        :class="currentTask.done==true ? 'bg-success' : 'bg-danger'"
                     >
 
                         <!-- se il task è stato eseguito sbarro il testo -->
-                        <span :class="currentTask.done ? 'text-decoration-line-through' : ''">
+                        <span 
+                            @click="invertTaskDone(index)"
+                            :class="currentTask.done ? 'text-decoration-line-through' : ''"
+                            role='button'
+                        >
+                            
                             {{currentTask.text}}
+
                         </span>
 
                         <!-- al click dell'icona rimuovo il task corrispondente -->

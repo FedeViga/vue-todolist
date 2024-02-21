@@ -68,7 +68,14 @@ createApp({
         addTask() {
 
             this.tasks.push({...this.newTask})
-            
+
+        },
+
+        // inverto lo status di done del task selezionato
+        invertTaskDone(currentTask) {
+
+            this.tasks[currentTask].done = ! this.tasks[currentTask].done
+
         }
     }
 
